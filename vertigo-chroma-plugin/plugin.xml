@@ -12,7 +12,7 @@
             id="io.vertigo.chroma.kspplugin.views.editors.kspEditor"
             name="KSP Editor">
       </editor>
-      <editor
+      <editor 
             class="io.vertigo.chroma.kspplugin.ui.editors.kpr.KprEditor"
             default="false"
             extensions="kpr"
@@ -20,6 +20,14 @@
             id="io.vertigo.chroma.kspplugin.views.editors.kprEditor"
             name="KPR Editor">
       </editor>
+   </extension>
+   <extension
+          point="org.eclipse.ui.contexts">
+       <context
+             id="io.vertigo.chroma.kspplugin.ui.editors.kspEditorScope"
+             name="Editing KSP"
+             parentId="org.eclipse.ui.contexts.window">
+       </context>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -163,7 +171,7 @@
          point="org.eclipse.ui.bindings">
       <key
             commandId="io.vertigo.chroma.kspPlugin.commands.openKspDeclaration"
-            contextId="org.eclipse.ui.contexts.window"
+            contextId="io.vertigo.chroma.kspplugin.ui.editors.kspEditorScope"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="M1+M2+D">
       </key>
